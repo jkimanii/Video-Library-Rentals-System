@@ -8,8 +8,6 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 public class CustomerPanel extends VBox {
-    //private final DataStore store = DataStore.getInstance();
-
     public CustomerPanel(){
         setPadding(new Insets(20));
         setAlignment(Pos.TOP_CENTER);
@@ -17,11 +15,9 @@ public class CustomerPanel extends VBox {
         VBox card = new VBox(14);
         card.setMaxWidth(440);
 
-        // ---- Title ----
         Label title = new Label("Customer Management");
         Separator sep1 = new Separator();
 
-        // ---- Customer details ----
         TextField nameField = textField("Enter customer name");
         TextField phoneField = textField("Enter phone number");
         TextField emailField = textField("Enter email address");
@@ -35,7 +31,6 @@ public class CustomerPanel extends VBox {
 
         Separator sep2 = new Separator();
 
-        // ---- Registered ----
         ComboBox<Customer> registeredCombo = new ComboBox<>();
         registeredCombo.setMaxWidth(Double.MAX_VALUE);
         registeredCombo.setPromptText("Select a customer…");
@@ -43,10 +38,6 @@ public class CustomerPanel extends VBox {
         Button removeButton = new Button("Remove Customer");
         removeButton.getStyleClass().add("btn-danger");
         removeButton.setMaxWidth(Double.MAX_VALUE);
-
-        // ---- Wire actions ----
-        /*saveBtn.setOnAction(e -> saveCustomer());
-        removeBtn.setOnAction(e -> removeCustomer());*/
 
         card.getChildren().addAll(
                 title, sep1,
@@ -63,39 +54,6 @@ public class CustomerPanel extends VBox {
         getChildren().add(card);
     }
 
-    /*private void saveCustomer() {
-        String name  = nameField.getText().trim();
-        String phone = phoneField.getText().trim();
-        String email = emailField.getText().trim();
-
-        if (name.isEmpty()) {
-            showStatus("Name is required.", false);
-            return;
-        }
-        store.getCustomers().add(new Customer(name, phone, email));
-        nameField.clear();
-        phoneField.clear();
-        emailField.clear();
-        showStatus("Customer \"" + name + "\" saved.", true);
-    }
-
-    private void removeCustomer() {
-        Customer selected = registeredCombo.getValue();
-        if (selected == null) {
-            showStatus("Please select a customer to remove.", false);
-            return;
-        }
-        store.getCustomers().remove(selected);
-        registeredCombo.setValue(null);
-        showStatus("Customer \"" + selected.getName() + "\" removed.", true);
-    }*/
-
-    /*private void showStatus(String msg, boolean ok) {
-        statusLabel.setText(msg);
-        statusLabel.getStyleClass().removeAll("status-ok", "status-err");
-        statusLabel.getStyleClass().add(ok ? "status-ok" : "status-err");
-    }*/
-
     // ---- Helpers ----
     private TextField textField(String prompt) {
         TextField tf = new TextField();
@@ -106,7 +64,6 @@ public class CustomerPanel extends VBox {
 
     private HBox row(String labelText, javafx.scene.Node field) {
         Label label = new Label(labelText);
-        //label.getStyleClass().add("field-label");
         label.setMinWidth(60);
         label.setAlignment(Pos.CENTER_LEFT);
         HBox.setHgrow(field, Priority.ALWAYS);
