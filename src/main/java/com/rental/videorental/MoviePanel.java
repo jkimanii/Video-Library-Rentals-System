@@ -13,11 +13,9 @@ public class MoviePanel extends VBox {
         setAlignment(Pos.TOP_CENTER);
 
         VBox card = new VBox(14);
-        card.getStyleClass().add("panel-card");
         card.setMaxWidth(440);
 
         Label title = new Label("Movie Management");
-        title.getStyleClass().add("section-title");
 
         Separator sep1 = new Separator();
 
@@ -30,7 +28,6 @@ public class MoviePanel extends VBox {
         nameField.setMaxWidth(Double.MAX_VALUE);
 
         Button saveButton = new Button("Save Movie");
-        saveButton.getStyleClass().add("Button-primary");
         saveButton.setMaxWidth(Double.MAX_VALUE);
 
         Label statusLabel = new Label();
@@ -43,7 +40,6 @@ public class MoviePanel extends VBox {
         registeredCombo.setPromptText("Movies in selected genre…");
 
         Button removeButton = new Button("Remove Movie");
-        removeButton.getStyleClass().add("Button-danger");
         removeButton.setMaxWidth(Double.MAX_VALUE);
 
         card.getChildren().addAll(
