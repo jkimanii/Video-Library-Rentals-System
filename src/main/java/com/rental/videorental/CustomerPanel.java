@@ -23,7 +23,6 @@ public class CustomerPanel extends VBox {
         TextField emailField = textField("Enter email address");
 
         Button saveButton = new Button("Save Customer");
-        saveButton.getStyleClass().add("btn-primary");
         saveButton.setMaxWidth(Double.MAX_VALUE);
 
         Label statusLabel = new Label();
@@ -36,7 +35,6 @@ public class CustomerPanel extends VBox {
         registeredCombo.setPromptText("Select a customer…");
 
         Button removeButton = new Button("Remove Customer");
-        removeButton.getStyleClass().add("btn-danger");
         removeButton.setMaxWidth(Double.MAX_VALUE);
 
         card.getChildren().addAll(
