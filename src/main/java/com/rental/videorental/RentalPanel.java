@@ -17,11 +17,9 @@ public class RentalPanel extends VBox {
         setAlignment(Pos.TOP_CENTER);
 
         VBox card = new VBox(14);
-        card.getStyleClass().add("panel-card");
         card.setMaxWidth(480);
 
         Label title = new Label("Rental Management");
-        title.getStyleClass().add("section-title");
 
         Separator sep1 = new Separator();
 
@@ -38,7 +36,6 @@ public class RentalPanel extends VBox {
         moviesCombo.setPromptText("Movies in genre…");
 
         Button saveRentalbutton = new Button("Save Rental");
-        saveRentalbutton.getStyleClass().add("button-primary");
         saveRentalbutton.setMaxWidth(Double.MAX_VALUE);
 
         Label statusLabel = new Label();
@@ -51,7 +48,6 @@ public class RentalPanel extends VBox {
         borrowedCombo.setPromptText("Borrowed movies…");
 
         Button returnbutton = new Button("Return Movie");
-        returnbutton.getStyleClass().add("button-primary");
         returnbutton.setMaxWidth(Double.MAX_VALUE);
 
         ComboBox<Movie> returnedCombo = new ComboBox<>();
